@@ -132,10 +132,17 @@ inputDecimal = (dot) => {
     currentNumber += dot;
 };
 
-/*inputOperator = (operator) => {
-    if (calculationOperator === '') {
-        prevNumber = currentNumber;
-    };
-    calculationOperator = operator;
-    currentNumber = '0';
-}*/
+const percentage = document.querySelector('.percentage');
+
+percentage.addEventListener('click', () => {
+    console.log('percentage button is pressed');
+});
+
+const inputPercentage = () => {
+    currentNumber = parseFloat(currentNumber) / 100;
+};
+
+percentage.addEventListener("click", () => {
+    inputPercentage();
+    updateScreen(currentNumber);
+});
